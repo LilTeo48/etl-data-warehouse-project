@@ -1,0 +1,11 @@
+order_id,customer_name,product,category,quantity,unit_price,order_date,region
+1,John Smith,Laptop,Electronics,1,899.99,2025-01-10,South
+2,Maria Lopez,Keyboard,Electronics,2,49.99,2025-01-12,West
+3,David Johnson,Office Chair,Furniture,1,149.99,2025-01-15,East
+4,Sarah Brown,Desk,Furniture,1,299.99,2025-01-18,North
+5,Michael Davis,Monitor,Electronics,2,199.99,2025-01-22,South
+6,Ana Garcia,Notebook,Office Supplies,5,3.99,2025-01-25,West
+7,Chris Wilson,Pen Set,Office Supplies,3,7.99,2025-02-01,East
+8,Jessica Martinez,Laptop,Electronics,1,899.99,2025-02-05,North
+9,Daniel Anderson,Desk,Furniture,1,299.99,2025-02-10,South
+10,Emily Taylor,Monitor,Electronics,1,199.99,2025-02-14,West

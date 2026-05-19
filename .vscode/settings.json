@@ -1,0 +1,21 @@
+{
+    "sqltools.useNodeRuntime": true,
+    "sqltools.connections": [
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "ecommerce_db",
+            "database": "ecommerce_db",
+            "username": "postgres"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "ETL Warehouse",
+            "database": "${workspaceFolder:etl-data-warehouse-project}/database/sales_data.db"
+        }
+    ]
+}
