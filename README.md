@@ -1,31 +1,26 @@
 # ETL Data Warehouse Project
 
-A complete ETL (Extract, Transform, Load) pipeline built using Python, Pandas, SQLite, and SQL analytics queries.
+## Overview
 
-This project simulates a real-world business sales pipeline where raw CSV sales data is cleaned, transformed, loaded into a SQLite database, and analyzed using SQL queries.
+This project demonstrates a complete ETL (Extract, Transform, Load) pipeline using Python, Pandas, SQLite, and SQL. Raw sales data is extracted from CSV files, cleaned and transformed, loaded into a SQLite data warehouse, and analyzed using SQL queries to generate business insights and key performance indicators (KPIs).
 
----
+## Technologies Used
 
-## Tech Stack
-
-- Python
-- Pandas
-- SQLite
-- SQL
-- VS Code
-- SQLTools Extension
-
----
+* Python
+* Pandas
+* SQLite
+* SQL
+* VS Code
+* Git & GitHub
 
 ## Project Structure
 
-```bash
+```text
 etl-data-warehouse-project/
 │
 ├── data/
 │   ├── raw/
 │   │   └── sales_data.csv
-│   │
 │   └── processed/
 │
 ├── database/
@@ -37,28 +32,103 @@ etl-data-warehouse-project/
 ├── sql/
 │   └── analytics_queries.sql
 │
-├── requirements.txt
-├── .gitignore
-└── README.md
+├── README.md
+└── requirements.txt
+```
 
+## ETL Pipeline
 
+### Extract
 
-Current Features
-*) Automated ETL pipeline
-*) CSV data ingestion
-*) SQLite database creation
-*) SQL analytics queries
-*) Data cleaning with Pandas
-*) Query execution using SQLTools in VS Code
+* Reads raw sales data from CSV files.
+* Loads data into a Pandas DataFrame.
 
-Future Improvements
-*) Add larger and more realistic datasets
-*) Implement automated logging system
-*) Add error handling and validation
-*) Create Streamlit analytics dashboard
-*) Add data visualizations and KPIs
-*) Schedule automated ETL runs
-*) Export analytics reports to Excel/CSV
-*) Integrate PostgreSQL version
-*) Add Docker containerization
-*) Deploy dashboard online
+### Transform
+
+* Cleans and validates data.
+* Removes duplicates.
+* Standardizes column formats.
+* Prepares data for analytics.
+
+### Load
+
+* Loads transformed data into a SQLite database.
+* Creates a centralized warehouse table for reporting and analysis.
+
+## Database Schema
+
+### Sales Table
+
+| Column        | Description             |
+| ------------- | ----------------------- |
+| order_id      | Unique order identifier |
+| customer_name | Customer name           |
+| product       | Product purchased       |
+| category      | Product category        |
+| quantity      | Quantity sold           |
+| unit_price    | Price per unit          |
+| region        | Sales region            |
+
+## Analytics Queries
+
+The project includes SQL queries to answer common business questions:
+
+### Revenue Metrics
+
+* Total Revenue
+* Revenue by Category
+* Revenue by Region
+* Highest Revenue Category
+
+### Product Performance
+
+* Top Selling Products
+* Top 5 Revenue Products
+* Lowest Performing Products
+
+### Regional Analysis
+
+* Orders by Region
+* Average Revenue Per Region
+
+### Operational Metrics
+
+* Average Order Value
+* Total Units Sold by Category
+
+## Example Query
+
+```sql
+SELECT
+    category,
+    SUM(quantity * unit_price) AS revenue
+FROM sales
+GROUP BY category
+ORDER BY revenue DESC;
+```
+
+## Skills Demonstrated
+
+* ETL Pipeline Development
+* Data Cleaning and Transformation
+* Relational Database Design
+* SQL Analytics
+* KPI Reporting
+* Data Warehousing Concepts
+* Business Intelligence Fundamentals
+
+## Future Improvements
+
+* PostgreSQL integration
+* Automated scheduling
+* Interactive dashboard using Streamlit
+* Data visualization and reporting
+* Additional warehouse tables and dimensional modeling
+
+## Author
+
+Tyler Chadwick
+
+GitHub: https://github.com/LilTeo48
+LinkedIn: https://www.linkedin.com/in/tyler-chadwick-81b9a6275
+
