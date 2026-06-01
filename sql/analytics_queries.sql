@@ -1,27 +1,73 @@
--- Total Revenue 
-SELECT 
+-- Total Revenue
+SELECT
     SUM(quantity * unit_price) AS total_revenue
 FROM sales;
 
--- Revenue by Category 
+-- Revenue by Category
 SELECT
-    category, 
-    SUM(quantity * unit_price) AS revenue 
+    category,
+    SUM(quantity * unit_price) AS revenue
 FROM sales
 GROUP BY category
 ORDER BY revenue DESC;
 
--- Top Selling Products 
-SELECT 
-    product, 
-    SUM(quantity) AS total_sold
-FROM sales 
-GROUP BY product 
-ORDER BY total_sold DESC; 
-
--- Orders by Region 
+-- Top Selling Products
 SELECT
-    region, 
+    product,
+    SUM(quantity) AS total_sold
+FROM sales
+GROUP BY product
+ORDER BY total_sold DESC;
+
+-- Orders by Region
+SELECT
+    region,
     COUNT(order_id) AS total_orders
 FROM sales
-GROUP BY region;    
+GROUP BY region;
+
+-- Average Order Value
+SELECT
+    AVG(quantity * unit_price) AS avg_order_value
+FROM sales;
+
+-- Revenue by Region
+SELECT
+    region,
+    SUM(quantity * unit_price) AS revenue
+FROM sales
+GROUP BY region
+ORDER BY revenue DESC;
+
+-- Top 5 Revenue Products
+SELECT
+    product,
+    SUM(quantity * unit_price) AS revenue
+FROM sales
+GROUP BY product
+ORDER BY revenue DESC
+LIMIT 5;
+
+-- Lowest Performing Products
+SELECT
+    product,
+    SUM(quantity * unit_price) AS revenue
+FROM sales
+GROUP BY product
+ORDER BY revenue ASC;
+
+-- Average Revenue Per Region
+SELECT
+    region,
+    AVG(quantity * unit_price) AS avg_revenue
+FROM sales
+GROUP BY region
+ORDER BY avg_revenue DESC;
+
+-- Total Units Sold by Category
+SELECT
+    category,
+    SUM(quantity) AS units_sold
+FROM sales
+GROUP BY category
+ORDER BY units_sold DESC;
